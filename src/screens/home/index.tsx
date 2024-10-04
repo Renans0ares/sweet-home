@@ -1,11 +1,16 @@
 import React from "react";
-import { View, Text, Button } from "react-native";
+import { View, StyleSheet } from "react-native";
 import { styles } from "./styles";
+import { Header } from "./components/Header";
+import { GridOptions } from "./components/GridOptions";
+import { FooterMenu } from "./components/FooterMenu";
 
 export const HomeScreen = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Bem-vindo à HomeScreen!</Text>
+      <Header />
+      <GridOptions />
+      <FooterMenu />
     </View>
   );
 };
