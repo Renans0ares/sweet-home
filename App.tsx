@@ -3,11 +3,14 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { LoginScreen } from "./src/screens/login";
 import { HomeScreen } from "./src/screens/home";
+import { TaskScreen } from "./src/screens/task";
+import { MarketScreen } from "./src/screens/market";
 
-// Definindo o tipo para as rotas
 export type RootStackParamList = {
-  Login: undefined; // Não espera parâmetros para Login
-  Home: undefined; // Não espera parâmetros para Home
+  Login: undefined;
+  Home: undefined;
+  Task: undefined;
+  Market: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -24,6 +27,16 @@ export default function App() {
         <Stack.Screen
           name="Home"
           component={HomeScreen}
+          options={{ headerShown: false }} // Se você quiser mostrar o cabeçalho na tela de Home
+        />
+        <Stack.Screen
+          name="Task"
+          component={TaskScreen}
+          options={{ headerShown: false }} // Se você quiser mostrar o cabeçalho na tela de Home
+        />
+        <Stack.Screen
+          name="Market"
+          component={MarketScreen}
           options={{ headerShown: false }} // Se você quiser mostrar o cabeçalho na tela de Home
         />
       </Stack.Navigator>
